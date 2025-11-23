@@ -1,12 +1,14 @@
 import numpy as np
 import matplotlib.pyplot as plt
-
+import os
 from sklearn.model_selection import StratifiedKFold, cross_val_score
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import make_pipeline
 
 from utils import load_processed, compute_metrics, print_metrics
+
+
 
 
 def choose_best_k(X_train, y_train):
@@ -35,6 +37,7 @@ def choose_best_k(X_train, y_train):
     plt.ylabel("Acurácia média (CV)")
     plt.grid(True)
     plt.show()
+
 
     # Melhor K
     best_k = k_values[int(np.argmax(scores))]
