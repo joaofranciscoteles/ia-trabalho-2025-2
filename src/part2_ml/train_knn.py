@@ -5,11 +5,9 @@ from sklearn.model_selection import StratifiedKFold, cross_val_score
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import make_pipeline
+import json
 
 from utils import load_processed, compute_metrics, print_metrics
-
-
-
 
 def choose_best_k(X_train, y_train):
     """Encontra o melhor valor de K usando validação cruzada."""
@@ -36,8 +34,18 @@ def choose_best_k(X_train, y_train):
     plt.xlabel("K")
     plt.ylabel("Acurácia média (CV)")
     plt.grid(True)
-    plt.show()
+   
 
+    pasta="../../reports/figs"
+    os.makedirs(pasta,exist_ok=True)
+
+    caminho=os.path.join(pasta,"escolha_melhor_k_knn.png")
+
+    plt.savefig(caminho,dpi=300,bbox_inches="tight")
+    print(f">>Gráfico salvo em:{caminho}")
+
+    plt.show()
+    plt.close()
 
     # Melhor K
     best_k = k_values[int(np.argmax(scores))]
@@ -61,7 +69,7 @@ def train_and_evaluate(X_train, X_test, y_train, y_test, best_k):
     metrics = compute_metrics(y_test, y_pred)
     print_metrics(metrics)
 
-    return model
+    return model,metrics
 
 
 def main():
@@ -74,9 +82,18 @@ def main():
     best_k = choose_best_k(X_train, y_train)
 
     # 3. Treinar modelo final e avaliar
-    train_and_evaluate(X_train, X_test, y_train, y_test, best_k)
+    model,metrics=train_and_evaluate(X_train, X_test, y_train, y_test, best_k)
 
     print("\nTreino KNN concluído com sucesso!")
+
+    output_path = os.path.join("../../data","processed","knn_metrics.json")
+    os.makedirs(os.path.dirname(output_path),exist_ok=True)
+
+    with open(output_path,"w") as f:
+        json.dump(metrics,f,indent=4)
+    
+    print(f"\nMétricas salvas em: {output_path}")
+    
 
 
 if __name__ == "__main__":

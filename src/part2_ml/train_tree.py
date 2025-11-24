@@ -2,7 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.tree import DecisionTreeClassifier, plot_tree
 from sklearn.model_selection import StratifiedKFold, cross_val_score
-
+import os
+import json
 from utils import load_processed, compute_metrics, print_metrics
 
 
@@ -43,7 +44,7 @@ def choose_best_depth(X_train, y_train):
     return best_depth
 
 
-def plot_decision_tree(model, feature_names, save_path="tree_plot.png"):
+def plot_decision_tree(model, feature_names, save_path="../../reports/figs/tree_plot.png"):
     """
     Plota a árvore completa e salva a imagem.
     """
@@ -53,7 +54,8 @@ def plot_decision_tree(model, feature_names, save_path="tree_plot.png"):
         feature_names=feature_names,
         filled=True,
         rounded=True,
-        fontsize=10
+        fontsize=10,
+        max_depth=3
     )
     plt.tight_layout()
     plt.savefig(save_path, dpi=300)
@@ -83,7 +85,7 @@ def train_and_evaluate(X_train, X_test, y_train, y_test, best_depth, feature_nam
     # --- PLOTAR A ÁRVORE ---
     plot_decision_tree(model, feature_names)
 
-    return model
+    return model,metrics
 
 
 def main():
@@ -93,18 +95,28 @@ def main():
     X_train, X_test, y_train, y_test = load_processed()
 
     # NOMES DAS FEATURES (só pegar do train.csv)
-    feature_names = [
-        "age","sex","cp","trestbps","chol","fbs","restecg","thalach",
-        "exang","oldpeak","slope","ca","thal"
-    ]
+    try:
+        feature_names = list(X_train.columns)
+    except:
+        feature_names = [f"feature_{i}" for i in range(X_train.shape[1])]
+
 
     # 2. Escolher melhor profundidade
     best_depth = choose_best_depth(X_train, y_train)
 
     # 3. Treinar e avaliar
-    train_and_evaluate(X_train, X_test, y_train, y_test, best_depth, feature_names)
+    model,metrics=train_and_evaluate(X_train, X_test, y_train, y_test, best_depth, feature_names)
 
     print("\nTreino da Árvore de Decisão concluído!")
+
+
+    output_path = os.path.join("../../data","processed","dt_metrics.json")
+    os.makedirs(os.path.dirname(output_path),exist_ok=True)
+
+    with open(output_path,"w") as f:
+        json.dump(metrics,f,indent=4)
+    
+    print(f"\nMétricas salvas em: {output_path}")
 
 
 if __name__ == "__main__":

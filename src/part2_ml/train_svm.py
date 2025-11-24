@@ -1,5 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import json
+import os
 
 from sklearn.model_selection import StratifiedKFold, cross_val_score
 from sklearn.pipeline import make_pipeline
@@ -71,7 +73,7 @@ def train_and_evaluate(X_train, X_test, y_train, y_test, best_params):
     metrics = compute_metrics(y_test, y_pred)
     print_metrics(metrics)
 
-    return model
+    return model,metrics
 
 
 def main():
@@ -83,9 +85,20 @@ def main():
     best_params = choose_best_svm(X_train, y_train)
 
     # 2. Treinar modelo final
-    train_and_evaluate(X_train, X_test, y_train, y_test, best_params)
+    model,metrics=train_and_evaluate(X_train, X_test, y_train, y_test, best_params)
 
     print("\nTreino SVM concluído!")
+
+    output_path = os.path.join("../../data","processed","svm_metrics.json")
+    os.makedirs(os.path.dirname(output_path),exist_ok=True)
+
+    with open(output_path,"w") as f:
+        json.dump(metrics,f,indent=4)
+    
+    print(f"\nMétricas salvas em: {output_path}")
+    
+
+
 
 
 if __name__ == "__main__":
