@@ -80,6 +80,44 @@ Você deve instalar a biblioteca manualmente usando o `pip` (gerenciador de paco
 pip install -r requirements.txt
 ```
 
+## 📂 Detalhes do Projeto
+
+### Estrutura de Pastas
+
+``` Markdown
+Trabalho1/
+├── data/
+│   ├── labirinto.txt
+│   ├── labirinto1.txt
+|   └── labirinto3.txt
+│
+├── src/
+│   ├── main.py
+│   ├── astar.py
+│   ├── bfs.py
+│   ├── dfs.py
+│   ├── gbfs.py
+│   └── maze_utils.py
+│
+├── resultados/
+│   ├── comparativo_heuristicas/
+|   |    ├── custo_caminho.png
+|   |    ├── memoria_maxima.png
+|   |    ├── nos_expandidos.png
+|   |    ├── tempo_execucao.png
+│   ├── geral/
+|   |    ├── custo_caminho.png
+|   |    ├── memoria_maxima.png
+|   |    ├── nos_expandidos.png
+|   |    ├── tempo_execucao.png
+|
+├── .gitignore
+├── trabalho1__BrunoPrado_JoãoFrancisco_.pdf
+├── README.md 
+└── requirements.txt
+
+
+```
 ---
 
 ## 🧩 Estrutura do Trabalho
@@ -245,3 +283,4 @@ Trabalho desenvolvido em dupla pelos seguintes alunos:
 
 
 [gmail-joao]: 
+
