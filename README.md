@@ -114,25 +114,15 @@ pip install -r requirements.txt
 └── requirements.txt
 
 ```
----
+## ▶️ Execução
 
-## ⚙️ Como Reproduzir
+Certifique-se de estar na raiz do projeto (pasta `ia-trabalho-2025-2`) e com o ambiente virtual ativado. Cada parte do trabalho funciona de maneira independente.
 
-```bash
-python -m venv .venv
-source .venv/bin/activate   # Linux/macOS
-# .\.venv\Scripts\activate  # Windows
-
-pip install -r requirements.txt
-```
-
-### Parte 1 — Árvore de Decisão Manual
+### 1. Árvore de Decisão Manual
+Executa o sistema especialista interativo para recomendação de filmes.
 ```bash
 python src/part1_tree_manual/tree_manual.py
 ```
-
-Diagrama da árvore (Mermaid):  
-`src/part1_tree_manual/tree_diagram.md`
 
 ---
 
@@ -263,5 +253,6 @@ Trabalho desenvolvido em dupla pelos seguintes alunos:
 
 
 [gmail-joao]: 
+
 
 
