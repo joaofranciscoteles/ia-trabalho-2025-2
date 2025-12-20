@@ -17,14 +17,17 @@ q4 -- Não --> q3{3. Gosta de histórias emocionais e profundas?}
 q3 -- Sim --> s_drama1[Drama]
 q3 -- Não --> q5{5. Gosta de histórias românticas/afetivas?}
 
-q5 -- Sim --> s_romance[Romance]
+q5 -- Sim --> q7{7. Prefere finais felizes clichês?}
 q5 -- Não --> q6{6. A história te leva para fora da realidade comum?}
 
 q6 -- Sim --> q8{8. Tecnologia/futuro/espaço?}
 q6 -- Não --> q9{9. Gosta de jornadas/viagens/descobertas?}
 
+q7 -- Sim --> s_romcom[Comédia_Romântica]
+q7 -- Não --> s_romdra[Romance_Dramático]
+
 q8 -- Sim --> s_scifi[Ficção Científica]
 q8 -- Não --> s_fantasy[Fantasia]
 
 q9 -- Sim --> s_adventure2[Aventura]
-q9 -- Não --> s_drama2[Drama]
+q9 -- Não --> s_documentario[Documentário]

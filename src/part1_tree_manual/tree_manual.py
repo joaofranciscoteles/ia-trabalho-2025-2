@@ -37,7 +37,11 @@ def main():
 
     q5 = ask("5. Gosta de histórias românticas/afetivas?")
     if q5 == "sim":
-        print("Recomendação: Romance")
+        q7 = ask("7. Prefere finais felizes clichês?")
+        if q7 == "sim":
+            print("Recomendação: Comédia Romântica")
+        else:
+            print("Recomendação: Romance Dramático")
         return
 
     q6 = ask("6. A história te leva para fora da realidade comum?")
@@ -54,7 +58,7 @@ def main():
     if q9 == "sim":
         print("Recomendação: Aventura")
     else:
-        print("Recomendação: Drama")
+        print("Recomendação: Documentário")
 
 
 if __name__ == "__main__":
