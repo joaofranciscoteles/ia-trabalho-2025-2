@@ -85,55 +85,35 @@ pip install -r requirements.txt
 ### Estrutura de Pastas
 
 ``` Markdown
-Trabalho1/
-├── data/
-│   ├── labirinto.txt
-│   ├── labirinto1.txt
-|   └── labirinto3.txt
-│
+├── data/              
+├── reports/
+│   └── figs/          
 ├── src/
-│   ├── main.py
-│   ├── astar.py
-│   ├── bfs.py
-│   ├── dfs.py
-│   ├── gbfs.py
-│   └── maze_utils.py
-│
-├── resultados/
-│   ├── comparativo_heuristicas/
-|   |    ├── custo_caminho.png
-|   |    ├── memoria_maxima.png
-|   |    ├── nos_expandidos.png
-|   |    ├── tempo_execucao.png
-│   ├── geral/
-|   |    ├── custo_caminho.png
-|   |    ├── memoria_maxima.png
-|   |    ├── nos_expandidos.png
-|   |    ├── tempo_execucao.png
-|
+│   ├── part1_tree_manual/
+│   │   ├──
+│   │   └── 
+│   ├── part2_ml/
+│   │   ├──
+│   │   ├──
+│   │   ├──
+│   │   ├──
+│   │   ├──
+│   │   └── 
+│   ├── part3_ga/
+│   │   ├── problems/
+│   │   │   └── 
+│   │   ├──
+│   │   └── 
+│   └── part4_swarm_immune/
+│   │   ├──
+│   │   ├──
+│   │   └── 
+├── README.md
 ├── .gitignore
-├── trabalho1__BrunoPrado_JoãoFrancisco_.pdf
-├── README.md 
+├── Trabalho_Algoritmos_de_Aprendizado_IA.pdf
 └── requirements.txt
 
-
 ```
----
-
-## 🧩 Estrutura do Trabalho
-
-1. **Parte 1 — Sistemas Simbólicos**  
-   Implementação manual de uma Árvore de Decisão binária (sistema especialista), sem uso de bibliotecas de ML.
-
-2. **Parte 2 — Aprendizado Supervisionado**  
-   Comparação entre KNN, SVM e Árvore de Decisão utilizando Scikit-Learn.
-
-3. **Parte 3 — Computação Evolutiva**  
-   Algoritmo Genético (GA) aplicado ao Problema do Caixeiro Viajante (TSP).
-
-4. **Parte 4 — Enxame e Sistemas Imunes**  
-   Estudo comparativo entre ACO e CLONALG aplicados ao TSP.
-
 ---
 
 ## ⚙️ Como Reproduzir
@@ -283,4 +263,5 @@ Trabalho desenvolvido em dupla pelos seguintes alunos:
 
 
 [gmail-joao]: 
+
 
