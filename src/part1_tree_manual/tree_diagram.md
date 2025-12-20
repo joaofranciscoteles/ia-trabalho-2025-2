@@ -1,33 +1,32 @@
 flowchart TD
+start([Início]) --> q1{1. Quer Adrenalina/Tensão?}
 
-start([Início]) --> q1{1. Você gosta de adrenalina?}
+    
+q1 -- Sim --> q2{2. Quer sentir medo?}
+q2 -- Sim --> R_Terror[Terror]
+q2 -- Não --> q3{3. Gosta de explosões/lutas?}
+    
+q3 -- Sim --> R_Acao[Ação]
+q3 -- Não --> q4{4. Prefere mistérios/crimes?}
+    
+q4 -- Sim --> R_Suspense[Suspense/Policial]
+q4 -- Não --> q5{5. Envolve futuro/espaço?}
+    
+q5 -- Sim --> R_SciFi[Ficção Científica]
+q5 -- Não --> R_Aventura[Aventura]
 
-q1 -- Sim --> q10{10. Prefere ritmo acelerado?}
-q1 -- Não --> q2{2. Gosta de filmes leves e engraçados?}
-
-q10 -- Sim --> s_action[Ação]
-q10 -- Não --> s_adventure1[Aventura]
-
-q2 -- Sim --> s_comedy[Comédia]
-q2 -- Não --> q4{4. Gosta de tensão/medo?}
-
-q4 -- Sim --> s_horror[Terror]
-q4 -- Não --> q3{3. Gosta de histórias emocionais e profundas?}
-
-q3 -- Sim --> s_drama1[Drama]
-q3 -- Não --> q5{5. Gosta de histórias românticas/afetivas?}
-
-q5 -- Sim --> q7{7. Prefere finais felizes clichês?}
-q5 -- Não --> q6{6. A história te leva para fora da realidade comum?}
-
-q6 -- Sim --> q8{8. Tecnologia/futuro/espaço?}
-q6 -- Não --> q9{9. Gosta de jornadas/viagens/descobertas?}
-
-q7 -- Sim --> s_romcom[Comédia_Romântica]
-q7 -- Não --> s_romdra[Romance_Dramático]
-
-q8 -- Sim --> s_scifi[Ficção Científica]
-q8 -- Não --> s_fantasy[Fantasia]
-
-q9 -- Sim --> s_adventure2[Aventura]
-q9 -- Não --> s_documentario[Documentário]
+   
+q1 -- Não --> q6{6. Quer dar risada?}
+q6 -- Sim --> R_Comedia[Comédia]
+q6 -- Não --> q7{7. Quer se emocionar/chorar?}
+    
+q7 -- Sim --> R_Drama[Drama]
+q7 -- Não --> q8{8. Foco em romance?}
+    
+q8 -- Sim --> q9{9. Prefere final feliz/leve?}
+q9 -- Sim --> R_ComRom[Comédia Romântica]
+q9 -- Não --> R_RomDrama[Romance Dramático]
+    
+q8 -- Não --> q10{10. Gosta de magia/irreal?}
+q10 -- Sim --> R_Fantasia[Fantasia]
+q10 -- Não --> R_Doc[Documentário/Bio]
