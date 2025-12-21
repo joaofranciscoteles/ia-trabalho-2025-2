@@ -178,12 +178,17 @@ Resultado:
 
 > ⚠️ **Alguns parâmetros ainda precisam ser confirmados**
 
-- **Dataset:** Cleveland Heart Disease – UCI Repository (**link exato pendente**)  
-- **Tarefa:** Classificação  
-- **Pré-processamento:** limpeza, imputação, one-hot encoding, normalização  
-- **Validação:** Hold-out + K-Fold (**valor de K pendente**)  
-- **Métricas:** Acurácia, Precisão, Revocação, F1-score (macro)  
-- **Sementes:** definidas em `src/common/seeds.py`
+- **Dataset:** Cleveland Heart Disease Dataset, proveniente do UCI Machine Learning Repository.
+- **Formulação do problema:** classificação binária, considerando ausência de doença cardíaca (classe 0) e presença de doença (classe 1).
+- **Pré-processamento:** remoção de amostras com valores ausentes, conversão de tipos, binarização da variável alvo e codificação one-hot das variáveis categóricas.
+- **Normalização:** aplicada apenas nos algoritmos sensíveis à escala (KNN e SVM), por meio do StandardScaler.
+- **Validação:** divisão hold-out estratificada (70% treino / 30% teste) e validação cruzada estratificada (5-fold) para seleção de hiperparâmetros.
+- **Seleção de hiperparâmetros:**
+  - KNN: escolha do parâmetro K via validação cruzada (K = 25);
+  - SVM: avaliação de kernels linear e RBF, com seleção de C e gamma;
+  - Árvore de Decisão: controle de complexidade por meio da profundidade máxima (max\_depth = 9).
+- **Métricas de avaliação:** acurácia, precisão, recall e F1-score, utilizando média macro para lidar com possível desbalanceamento entre classes.
+- **Reprodutibilidade:** uso de sementes fixas (`random_state=42`) e parâmetros explícitos nos scripts de execução.
 
 ---
 
@@ -235,6 +240,7 @@ Trabalho desenvolvido em dupla pelos seguintes alunos:
 [gmail-bruno]: mailto:bruno.santos@aluno.cefetmg.br
 
 [gmail-joao]: mailto:joaoteles0505@gmail.com
+
 
 
 
