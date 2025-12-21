@@ -78,9 +78,12 @@ if __name__ == "__main__":
     # Plota a média (linha forte)
     plt.plot(mean_history, linewidth=2, color='blue', label="Distância Média (30 execuções)")
     
-    # (Opcional) Plota todas as execuções em cinza claro no fundo para mostrar a variação
-    for h in all_histories:
-         plt.plot(h, color='gray', alpha=0.1)
+    # Plota todas as execuções em cinza claro no fundo
+    for i, h in enumerate(all_histories):
+        # Adiciona a label apenas na primeira linha (i==0) para não repetir na legenda
+        lbl = "Execuções Individuais" if i == 0 else None
+        plt.plot(h, color='gray', alpha=0.15, label=lbl)
+    # ---------------------
 
     plt.xlabel("Geração")
     plt.ylabel("Distância Total (Menor é melhor)")
