@@ -176,8 +176,6 @@ Resultado:
 
 ## ⚙️ Decisões Técnicas
 
-> ⚠️ **Alguns parâmetros ainda precisam ser confirmados**
-
 - **Dataset:** Cleveland Heart Disease Dataset, proveniente do UCI Machine Learning Repository.
 - **Formulação do problema:** classificação binária, considerando ausência de doença cardíaca (classe 0) e presença de doença (classe 1).
 - **Pré-processamento:** remoção de amostras com valores ausentes, conversão de tipos, binarização da variável alvo e codificação one-hot das variáveis categóricas.
@@ -240,6 +238,7 @@ Trabalho desenvolvido em dupla pelos seguintes alunos:
 [gmail-bruno]: mailto:bruno.santos@aluno.cefetmg.br
 
 [gmail-joao]: mailto:joaoteles0505@gmail.com
+
 
 
 
