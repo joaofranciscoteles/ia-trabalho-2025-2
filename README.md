@@ -183,16 +183,6 @@ Resultado:
 
 ---
 
-## 📊 Discussão dos Resultados (Resumo)
-
-> ⚠️ **Seção parcial – discussão final será ajustada após consolidação dos resultados**
-
-- **Machine Learning:** KNN apresentou melhor desempenho médio (≈86% de acurácia).  
-- **GA:** Redução superior a 70% no custo da rota em relação à solução inicial aleatória.  
-- **ACO vs CLONALG:** ACO converge rapidamente; CLONALG apresenta maior robustez em execuções longas.
-
----
-
 ## ⚙️ Decisões Técnicas
 
 > ⚠️ **Alguns parâmetros ainda precisam ser confirmados**
@@ -206,13 +196,15 @@ Resultado:
 
 ---
 
-## 📦 Dependências Principais
+## 💻 Máquinas de Teste
 
-- numpy  
-- pandas  
-- matplotlib  
-- seaborn  
-- scikit-learn  
+Para testagem do projeto, foram utilizadas 2 máquinas que rodaram o cógido em sistema operacional Linux (Ubuntu).
+
+| Máquina | Processador            | Memória RAM | Sistema Operacional |
+|------------------|------------------------|-------------|---------------------|
+| ACER NITRO 5 |Intel(R) Core(TM) i5-12450H    | 16 GB       | Windows 10     |
+| Acer Aspire A515-54    | Intel(R) Core(TM) i5-10210U    | 8 GB        | Windows 11       |
+
 
 ---
 
@@ -251,8 +243,8 @@ Trabalho desenvolvido em dupla pelos seguintes alunos:
 
 [gmail-bruno]: mailto:bruno.santos@aluno.cefetmg.br
 
+[gmail-joao]: mailto:joaoteles0505@gmail.com
 
-[gmail-joao]: 
 
 
 
