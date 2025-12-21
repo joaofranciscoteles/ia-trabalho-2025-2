@@ -90,24 +90,24 @@ pip install -r requirements.txt
 │   └── figs/          
 ├── src/
 │   ├── part1_tree_manual/
-│   │   ├──
-│   │   └── 
+│   │   ├── tree_diagram.md
+│   │   └── tree_manual.py
 │   ├── part2_ml/
-│   │   ├──
-│   │   ├──
-│   │   ├──
-│   │   ├──
-│   │   ├──
-│   │   └── 
+│   │   ├── plot_comparision.py
+│   │   ├── preprocess.py
+│   │   ├── train_knn.py
+│   │   ├── train_svm.py
+│   │   ├── train_tree.py
+│   │   └── utils.py
 │   ├── part3_ga/
 │   │   ├── problems/
-│   │   │   └── 
-│   │   ├──
-│   │   └── 
+│   │   │   └── tsp.py
+│   │   ├── ga.py
+│   │   └── run_ga.py
 │   └── part4_swarm_immune/
-│   │   ├──
-│   │   ├──
-│   │   └── 
+│   │   ├── aco.py
+│   │   ├── clonalg.py
+│   │   └── run_meta.py
 ├── README.md
 ├── .gitignore
 ├── Trabalho_Algoritmos_de_Aprendizado_IA.pdf
@@ -253,6 +253,7 @@ Trabalho desenvolvido em dupla pelos seguintes alunos:
 
 
 [gmail-joao]: 
+
 
 
 
