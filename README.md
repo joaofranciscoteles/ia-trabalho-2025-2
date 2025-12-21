@@ -154,12 +154,7 @@ Resultados:
 
 Execução padrão:
 ```bash
-python src/part3_ga/run_ga.py --iters 2000
-```
-
-Execução reprodutível:
-```bash
-python src/part3_ga/run_ga.py --iters 2000 --seed 42
+python src/part3_ga/run_ga.py
 ```
 
 Resultado:  
@@ -169,13 +164,9 @@ Resultado:
 
 ### Parte 4 — Enxame e Sistemas Imunes
 
+Execução padrão:
 ```bash
-python src/part4_swarm_immune/run_meta.py --iters 300
-```
-
-Execução estatística:
-```bash
-python src/part4_swarm_immune/run_meta.py --iters 1000 --seed 123
+python src/part4_swarm_immune/run_meta.py
 ```
 
 Resultado:  
@@ -244,6 +235,7 @@ Trabalho desenvolvido em dupla pelos seguintes alunos:
 [gmail-bruno]: mailto:bruno.santos@aluno.cefetmg.br
 
 [gmail-joao]: mailto:joaoteles0505@gmail.com
+
 
 
 
